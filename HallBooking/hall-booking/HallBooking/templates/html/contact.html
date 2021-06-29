@@ -1,0 +1,51 @@
+{% extends 'html/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+{% load static %}
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container">
+  <div class="card shadow-lg col-md-5 mx-auto mt-5">
+    <div class="card-body">
+      <form method="post">
+      {% csrf_token %}
+    <!-- <table class="table table-borderless"> -->
+      {% for m in k %}
+      <!-- <tr> -->
+        <div class="my-2">{{m}}</div>
+      <!-- </tr> -->
+      {% endfor %}
+
+<div class="w3agile-deals contact cd-section" id="contact">
+    <div class="container">
+                   
+     
+        <div class="col-md-6 contact-w3lsleft">
+                                    <div class="contact-row agileits-w3layouts">  
+          <div class="contact-grid agileits">
+            <h4>Contact Us</h4>
+                                                <p class="error" id="regisError"></p>          <!-- error , success  -->
+            <form action="#" method="post">
+              <input name="Name" placeholder="Name" required="" type="text" id="name">
+              <br></br>
+              <input name="Email" placeholder="Email" required="" type="email" id="email">
+              <br></br>
+              <input name="Phone Number" placeholder="Phone Number" required="" type="text" id="mobileid">
+              <br></br>
+              <textarea name="Message" placeholder="Message..." required="" id="message"></textarea>
+              <input type="hidden" id="conType" value="20">
+              <input type="submit" class="btn btn-block btn-primary my-2 p-2" value="Submit">          
+                                                       
+          </div>
+          </div>
+        </div>
+                           
+
+        <div class="clearfix"> </div>
+     
+     
+    </div>
+  </div>
+
+  {% endblock %}
+

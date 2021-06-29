@@ -1,0 +1,213 @@
+{% extends 'html/base.html' %}
+{% block title %} Dashboard {% endblock %}
+{% block content %}
+{% load static %}
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+
+<div class="container mt-4 ">
+	<!-- <div class="jumbotron"> -->
+		<h3>
+		{% if user.is_superuser %}
+		<!-- SuperUser Main Page	 -->
+		<h3 class="text-center text-primary" style="font-family: Georgia, serif;"><strong>Welcome {{user.username}}</strong></h3>
+		<div class="container mt-5">
+  
+		  <div class="row">
+
+		  	<div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>View Halls </h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="{% url 'hlv' %}"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+
+		    <div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>Booked Halls </h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="{% url 'bookedhalls' %}"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+
+		    <div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>Manager Details </h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="#"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+
+		    <div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>Customer Details </h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="#"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+		    
+		    <div class="container mt-5">
+  
+		  <div class="row">
+
+		  	<div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>Services </h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="{% url 'srvc' %}"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+
+		   
+		    <div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>Permissions</h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="{% url 'per' %}"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+
+		    
+		  	<div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>My Details </h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="{% url 'pf' %}"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+
+		</div>
+
+		<!-- User Dashboard -->
+
+		{% elif user.role == 1 %}
+		<h3 class="text-center text-primary" style="font-family: Georgia, serif;"><strong>Welcome {{user.username}}</strong></h3>
+		<h2 class="mt-2 text-light text-center" style="font-size: 25px">“People make events into stories. Stories give events meaning.”</h2>
+<!-- 		<div class="text-center" mt-4>
+		<img src="{% static 'img/event1.jpg' %}" style="width:300px;height:300px;">
+        </div> -->
+		<p class="text-light text-center" style="font-size: 18px">Our lives are full of memorable moments, but it can be difficult to remember all of these special times. Fortunately, preserving your important memories doesn’t have to be difficult. Whether you do this for your own memories or create a special gift to help capture a friend or loved one’s cherished memory, we can help.One of our top goals is to help our customers create memories for life. 
+	</p>
+		<div class="text-warning">
+		<strong>-></strong> Go to Available Halls.</br>
+			<strong>-></strong> Click on details to view more about the hall.</br>
+			<strong>-></strong> There are different services. Before proceeding with booking, we would like you to look services too. You have to contact the hall manager for services details.</br>
+			<strong>-></strong> Book the Hall and make payment for booking cofirmation so that you do not miss the chance to book a hall you want.</br>Please contact the hall manager for any queries about hall details, services and if there are any other services you need.</br>
+			<strong>-></strong> Our managers will be active and in touch with you.</br>
+			<strong>-></strong> We can even customize your needs.</br>
+</div>
+		
+
+		
+		{% elif user.role == 2 %}
+		<h3 class="text-center" style="font-family: Georgia, serif;"><strong>Welcome {{user.username}}</strong></h3>
+
+		<div class="container mt-5">
+  
+		  <div class="row">
+
+		  	<div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>View Halls </h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="{% url 'hlv' %}"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+
+		    <div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>Booked Halls </h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="{% url 'bookedhalls' %}"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+
+		  
+
+		    <div class="col-md-3">
+		  		<div class="card text-center">
+		  			<div class="card-header bg-secondary text-white">
+		  				<h4>My Details </h4>
+		  			</div>
+		  			<div class="card-footer">
+		  				<p>
+		  					<a href="{% url 'pf' %}"><i class="bi bi-eye"></i> View</a>
+		  				</p>
+		  			</div>
+		 			
+		  		</div>
+		    </div>
+		    
+
+		</div>
+
+<!-- Guest Page -->
+		{% else %}
+		<h3 class="text-center" style="font-family: Georgia, serif;"><strong>Welcome {{user.username}}</strong></h3>
+		<h5>You are one step ahead to become a user/member in this website </br>
+			Currently your role is <strong>Guest</strong> you have to send a request to admin to access user or manager permissions in this site</br>
+		<a href="{% url 'rr' %}">Request</a> the <strong>Admin</strong> to become a member</h5>
+
+
+		{% endif %}
+
+		</h3>
+		
+	</div>
+</div>
+{% endblock %}

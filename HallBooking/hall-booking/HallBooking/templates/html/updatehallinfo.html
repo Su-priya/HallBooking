@@ -1,0 +1,32 @@
+{% extends 'html/base.html' %}
+{% block title %}Update{% endblock %}
+{% block content %}
+{% load static %}
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container">
+	<div class="card col mx-auto mt-3 border-danger shadow-lg">
+		<form method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+		<h3 class="ml-3 mt-2">Update</h3>
+		<div class="row p-2">
+			<div class="col-md mb-2">
+				{% for k in p %}
+					<div class="mb-2">
+						{{k}}
+					</div>
+				{% endfor %}	
+			</div>
+			<div class="col-md mb-2">
+				{% for k in r %}
+				<div class="mb-2">
+					{{k}}
+				</div>
+				{% endfor %}	
+			</div>
+		</div>
+		<input type="submit" value="Update" class="btn btn-block btn-info mb-3">
+	</form>
+	</div>
+</div>
+{% endblock %}

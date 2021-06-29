@@ -1,0 +1,43 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %} Profile {% endblock %}
+{% block content %}
+
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container-fluid">
+	 {% if messages %}
+	{% for j in messages %}
+	<div class="alert alert-{{j.tags}} alert-dismissible mt-2">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>{{j}}
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="row mt-3 mx-3">
+		
+		<div class="col-md mt-3 mx-3">
+			<div class="card border-success">
+				<h3 class="bg-dark text-white text-center p-2">Hall Details</h3>
+				<div class="container mt-4">
+					<div class="col-md-3 h-100">
+			<div class="card border-info">
+				<img src="{{s.fil.url}}" class="card-img-top rounded" height="230px" width="100%"/>
+			</div>
+			
+		</div>
+	
+		<h2 class="text-danger">{{s.name}}</h2>
+		<h5 class="text-success">{{s.status}}</h5>
+		<h5>Halltype: {{s.halltype}}</h5>
+		<h5>Occupancy: {{s.occupancy}}</h5>
+		<h5>Amount: {{s.amount}}</h5>
+	</div>
+</div>
+					
+				<a href="{% url 'avh' %}" class="btn btn-warning m-2 text-light"><h4>Back</h4></a>
+			</div>
+		</div>
+	</div> 
+</div>
+
+{% endblock %}

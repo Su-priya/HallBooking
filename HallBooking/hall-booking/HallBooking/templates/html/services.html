@@ -1,0 +1,21 @@
+{% extends 'html/base.html' %}
+{% block title %} AddHall {% endblock %}
+{% load static %}
+{% block content %}
+
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+
+<a href="{% url 'food' %}" class="btn btn-block btn-info text-light mb-2">Food Menus</a>
+<a href="{% url 'decor' %}" class="btn btn-block btn-info text-light mb-2">Decorations</a>
+<a href="{% url 'firwor' %}" class="btn btn-block btn-info text-light mb-2">Fireworks</a>
+<a href="{% url 'eventman' %}" class="btn btn-block btn-info text-light mb-2">Event Managers</a>
+
+	
+
+
+
+
+{% endblock %}
+
+ 

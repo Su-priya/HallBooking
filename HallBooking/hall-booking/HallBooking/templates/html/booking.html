@@ -1,0 +1,31 @@
+{% extends 'html/base.html' %}
+{% block title %} Booking {% endblock %}
+
+{% block content %}
+{% load static %}
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container">
+	<div class="card col-md-6 mt-2 mx-auto shadow-lg">
+		<div class="card-body">
+			<h2>Book Hall</h2>
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<!-- <table class="table table-borderless"> -->
+					<div class="col-md mb-2">
+					{% for m in p %}
+					<div class="mb-2">
+						{{m}}
+					</div>
+					{% endfor %}
+				<!-- </table> -->
+			</div>
+				<input type="submit" value="BookNow" class="btn btn-success btn-block my-2">
+				<a href="{% url 'avh' %}" class="btn btn-block btn-danger text-light mb-2">Cancel</a>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+ 

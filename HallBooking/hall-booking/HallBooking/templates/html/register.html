@@ -1,0 +1,28 @@
+{% extends 'html/base.html' %}
+{% block title %}Registration{% endblock %}
+{% block content %}
+{% load static %}
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container">
+  <div class="card shadow-lg col-md-5 mx-auto mt-5">
+    <div class="card-body">
+      <td style="background: url('{{ STATIC_URL }}img/minerva.jpg') no-repeat;"> 
+      <h2 class="my-2">Registration</h2>
+      <form method="post">
+      {% csrf_token %}
+    <!-- <table class="table table-borderless"> -->
+      {% for m in k %}
+      <!-- <tr> -->
+        <div class="my-2">{{m}}</div>
+      <!-- </tr> -->
+      {% endfor %}
+    <!-- </table> -->
+    <input type="submit" class="btn btn-block btn-primary my-2 p-2" value="Subscribe">
+    </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

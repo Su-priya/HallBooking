@@ -1,0 +1,20 @@
+{% extends 'html/base.html' %}
+{% block title %}Delete Hall {% endblock %}
+{% block content %}
+{% load static %}
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container">
+	<div class="card mt-3 mx-auto col-md-6 shadow-lg">
+		<div class="card-body">
+			<form method="post">
+				{% csrf_token %}
+			<h2 class="bg-primary text-white text-center p-2 border rounded">Delete Hall</h2>
+			<h3>Are you sure you want to delete {{t.name}} Hall?</h3>
+			<input type="submit" class="btn btn-success" value="Yes Confirm">
+			<a href="{% url 'hlv' %}" class="btn btn-danger">Cancel</a>
+		</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'html/base.html' %}
+{% block title %} View Event Managers {% endblock %}
+{% load static %}
+{% block content %}
+
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container-fluid mt-3">
+	{% if messages %}
+	{% for j in messages %}
+	<div class="alert alert-{{j.tags}} alert-dismissible mt-2">
+  		<button type="button" class="close m-2" data-dismiss="alert">&times;</button>
+  		<!-- <img src="{% static 'images/usrgd.jpg' %}" class="rounded-circle" height="40px" width="50px"/> -->  {{j}}
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="row">
+		<div class="card col-md mx-2">
+		<div class="card-body">
+			<table class="table table-borderless" id="table_id">
+				<tr class="bg-dark text-white border rounded">
+					<th>sno</th>
+					<th>EventManager Name</th>
+					<th>Contact</th>
+					<th>Company Name</th>
+					
+				</tr>
+				{% for n in m %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+					<td>{{n.eventmanager}}</td>
+					<td>{{n.managercontact}}</td>
+					<td>{{n.company}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+			<a href="{% url 'dsh' %}" class="btn btn-info mx-2">Back</a>
+		</div>
+	</div>
+	
+</div>
+{% endblock %}

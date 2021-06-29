@@ -1,0 +1,44 @@
+{% extends 'html/base.html' %}
+{% block title %} Halls {% endblock %}
+{% load static %}
+{% block content %}
+
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container-fluid mt-3">
+	{% if messages %}
+	{% for j in messages %}
+	<div class="alert alert-{{j.tags}} alert-dismissible mt-2">
+  		<button type="button" class="close m-2" data-dismiss="alert">&times;</button>
+  		<!-- <img src="{% static 'images/usrgd.jpg' %}" class="rounded-circle" height="40px" width="50px"/> -->  {{j}}
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="row">
+		<div class="card col-md mx-2">
+		<div class="card-body">
+			<table class="table table-borderless" id="table_id">
+				<tr class="bg-dark text-white border rounded">
+					<th>sno</th>
+					<th>Hall</th>
+					<th>Address</th>
+					<th>Contact</th>
+					<th>Status</th>
+					<th colspan="2">Actions</th>
+				</tr>
+				{% for n in m %}
+				<tr>
+					<td>{{forloop.counter}}</td>
+					<td>{{n.name}}</td>
+					<td>{{n.address}}</td>
+					<td>{{n.contact}}</td>
+					<td>{{n.status}}</td>
+					<td><a href="{% url 'bkh' n.id  %}" class="btn btn-info mx-2">BookNow</a><a href="{% url 'detail' n.id %}" class="btn btn-danger mx-2">Details</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+	
+</div>
+{% endblock %}

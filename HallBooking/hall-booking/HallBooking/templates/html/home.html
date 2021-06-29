@@ -1,0 +1,43 @@
+{% extends 'html/base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+{% load static %}
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class=" text-last " style="margin-bottom:0">
+	<h1 class="text-white">VENUE FOR YOU</h1>
+</div>
+<div id="demo" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+<ul class="carousel-indicators">
+  <li data-target="#demo" data-slide-to="0" class="active"></li>
+<li data-target="#demo" data-slide-to="1"></li>
+<li data-target="#demo" data-slide-to="2"></li>
+</ul>
+
+<!-- The slideshow -->
+<div class="container p-3 my-3 bg-info text-white">
+<div class="carousel-inner">
+<div class="carousel-item active" >
+<img src="{% static 'img/hall1.jpg' %}" class="mx-auto d-block" style="width:70%">
+</div>
+             <div class="carousel-item">
+             <img src="{% static 'img/marasa.jpg' %}" class="mx-auto d-block" style="width:70%">
+             </div>
+             <div class="carousel-item">
+              <img src="{% static 'img/hall2.jpg' %}" class="mx-auto d-block"   style="width:70%">
+             </div>
+             <!-- <div class="carousel-item">
+              <img src="{% static 'img/hall2.jpg' %}" alt="" class="mx-auto d-block" style="width:50%">
+             </div> -->
+         </div>
+
+        
+     </div></div>
+<div>
+
+
+
+
+
+{% endblock %}

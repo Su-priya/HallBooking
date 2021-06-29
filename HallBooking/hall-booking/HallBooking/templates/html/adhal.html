@@ -1,0 +1,28 @@
+{% extends 'html/base.html' %}
+{% block title %} AddHall {% endblock %}
+{% load static %}
+{% block content %}
+
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container">
+	<div class="card col-md-6 mt-3 mx-auto shadow-lg">
+		<div class="card-body">
+			<h2>Add Hall</h2>
+			<form method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<table class="table table-borderless">
+					{% for m in p %}
+					<tr>
+						<td>{{m}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+				<input type="submit" value="Add" class="btn btn-success btn-block">
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+ 

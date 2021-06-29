@@ -1,0 +1,20 @@
+{% extends 'html/base.html' %}
+{% block title %}Hall Request {% endblock %}
+{% block content %}
+{% load static %}
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container">
+	<div class="card mt-3 mx-auto col-md-6 shadow-lg">
+		<div class="card-body">
+			<form method="post">
+				{% csrf_token %}
+			<h2 class="bg-primary text-white text-center p-2 border rounded">Hall Request</h2>
+			<h3>Your request to book {{t.name}} Hall is successful. Make payment to confirm booking.</h3>
+			<input type="submit" value="Make Payment" class="btn btn-success btn-block my-2">
+			<a href="{% url 'avh' %}" class="btn btn-danger">Go Back</a>
+		</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

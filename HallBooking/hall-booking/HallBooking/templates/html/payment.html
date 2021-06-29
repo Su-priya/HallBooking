@@ -1,0 +1,76 @@
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %} Profile {% endblock %}
+{% block content %}
+<u class="text-white mt-2"><h2 class="text-white text-center mx-auto mt-5">Make Payment - Enter your card details</h2>
+ </u>
+<div class="text-center mt-4">
+<img src="{% static 'img/american.jpg' %}"  style="width:150px;height:100px;">
+<img src="{% static 'img/discover.jpg' %}"  style="width:150px;height:100px;">
+<img src="{% static 'img/mastercard.jpg' %}" style="width:150px;height:100px;">
+<img src="{% static 'img/visa.jpg' %}"  style="width:150px;height:100px;">
+</div>
+<body id="bg" style="background-image: url('{% static 'img/about5.jpg' %}');">
+</body>
+<div class="container">
+  <div class="card shadow-lg col-md-5 mx-auto mt-5">
+    <div class="card-body">
+      <form method="POST" >
+      	{% csrf_token %}
+		 <p><label for="id_cardno">Cardno:</label> <input type="number" name="cardno" value="XXXXXXXXXXXXX" class="form-control" placeholder="Enter your Card number" maxlength="13" required id="id_cardno"></p>
+<p><label for="id_cvv">CVV:</label> <input type="number" name="cvv" value="XXX" class="form-control" placeholder="cvv" maxlength="3" required id="id_cvv"></p>
+<p><label for="id_expmonth">Expmonth:</label> <select name="expmonth" class="form-control" placeholder="Exp Month" required id="id_expmonth">
+  <option value="" selected>---------</option>
+
+  <option value="1">January</option>
+
+  <option value="2">February</option>
+
+  <option value="3">March</option>
+
+  <option value="4">April</option>
+
+  <option value="5">May</option>
+
+  <option value="6">June</option>
+
+  <option value="7">July</option>
+
+  <option value="8">August</option>
+
+  <option value="9">September</option>
+
+  <option value="10">October</option>
+
+  <option value="11">November</option>
+
+  <option value="12">December</option>
+
+</select></p>
+<p><label for="id_expyear">Expyear:</label> <select name="expyear" class="form-control" placeholder="Exp Year" required id="id_expyear">
+  <option value="" selected>---------</option>
+
+  <option value="1">2021</option>
+
+  <option value="2">2022</option>
+
+  <option value="3">2023</option>
+
+  <option value="4">2024</option>
+
+  <option value="5">2025</option>
+
+  <option value="6">2026</option>
+
+  <option value="7">2017</option>
+
+  <option value="8">2028</option>
+
+</select></p>
+<p><label for="id_expyear">Amount:</label><input type="number" name="amt" class="form-control" value="25000" >
+      </div>
+      <input type="submit" value="Confirm Payment" class="btn btn-success btn-block">
+  </form>
+  </div>
+</div>
+{% endblock %}
